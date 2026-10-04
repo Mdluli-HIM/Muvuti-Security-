@@ -136,6 +136,7 @@ export default function Hero() {
                 <Link
                   href="/services"
                   className="
+                    tactical-target
                     group inline-flex h-[54px]
                     items-center gap-6
                     rounded-full

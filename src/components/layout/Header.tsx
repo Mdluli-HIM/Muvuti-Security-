@@ -312,7 +312,8 @@ export default function Header() {
                 items-center
                 justify-center
                 px-5
-                py-10
+                py-16
+                md:py-20
               "
             >
               <motion.div
@@ -320,7 +321,7 @@ export default function Header() {
                   relative
                   w-full
                   max-w-[460px]
-                  overflow-hidden
+                  overflow-visible
                   border border-white/10
                   bg-[rgba(16,56,59,0.96)]
                   text-white
@@ -351,6 +352,87 @@ export default function Header() {
                   },
                 }}
               >
+                {/* FLOATING LOGO */}
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                    y: 14,
+                    scale: 0.88,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    transition: {
+                      duration: 0.55,
+                      delay: 0.12,
+                      ease: [0.22, 1, 0.36, 1],
+                    },
+                  }}
+                  exit={{
+                    opacity: 0,
+                    y: 8,
+                    scale: 0.94,
+                    transition: {
+                      duration: 0.2,
+                    },
+                  }}
+                  className="
+                    absolute
+                    left-1/2
+                    -top-[80px]
+                    z-30
+                    -translate-x-1/2
+                  "
+                >
+                  <motion.div
+                    animate={{
+                      y: [0, -4, 0],
+                    }}
+                    transition={{
+                      duration: 3.2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <Link
+                      href="/"
+                      onClick={closeMenu}
+                      aria-label="Muvuti Security homepage"
+                      className="
+                        group
+                        flex
+                        h-[66px]
+                        w-[66px]
+                        items-center
+                        justify-center
+                        border
+                        border-white/15
+                        bg-[#10383b]
+                        shadow-[0_18px_45px_rgba(0,0,0,0.28)]
+                        backdrop-blur-xl
+                        transition-all
+                        duration-500
+                        ease-[cubic-bezier(.22,1,.36,1)]
+                        hover:scale-[1.03]
+                      "
+                    >
+                      <Image
+                        src="/images/logo/muvuti-logo.png"
+                        alt="Muvuti Security"
+                        width={48}
+                        height={48}
+                        priority
+                        className="
+                          h-[48px]
+                          w-[48px]
+                          object-contain
+                        "
+                      />
+                    </Link>
+                  </motion.div>
+                </motion.div>
+
                 {/* SUBTLE SURFACE */}
                 <div
                   className="
