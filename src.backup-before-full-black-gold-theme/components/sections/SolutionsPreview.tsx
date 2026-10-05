@@ -36,8 +36,8 @@ export default function SolutionsPreview() {
   return (
     <section
       className="
-        bg-[#0e0c09]
-        text-[#f3efe7]
+        bg-[#f3efe7]
+        text-[#17130e]
       "
     >
       <div
@@ -74,7 +74,7 @@ export default function SolutionsPreview() {
                 text-[9px]
                 uppercase
                 tracking-[0.26em]
-                text-[#a7977f]
+                text-[#756b5b]
               "
             >
               <span
@@ -113,7 +113,7 @@ export default function SolutionsPreview() {
               max-w-[430px]
               text-[14px]
               leading-[1.6]
-              text-[#a7977f]
+              text-[#756b5b]
               md:justify-self-end
               md:text-[15px]
             "
@@ -125,7 +125,7 @@ export default function SolutionsPreview() {
         </div>
 
         {/* MOBILE / TABLET LIST */}
-        <div className="border-t border-[#b28a50]/20 lg:hidden">
+        <div className="border-t border-[#17130e]/12 lg:hidden">
           {items.map((item) => (
             <Link
               key={item.title}
@@ -136,7 +136,7 @@ export default function SolutionsPreview() {
                 grid-cols-[92px_1fr]
                 gap-4
                 border-b
-                border-[#b28a50]/20
+                border-[#17130e]/12
                 py-4
                 sm:grid-cols-[116px_1fr]
                 sm:gap-6
@@ -186,12 +186,12 @@ export default function SolutionsPreview() {
                     className="
                       mt-1
                       shrink-0
-                      text-[#f3efe7]/35
+                      text-[#17130e]/35
                       transition-all
                       duration-300
                       group-hover:-translate-y-0.5
                       group-hover:translate-x-0.5
-                      group-hover:text-[#f3efe7]
+                      group-hover:text-[#17130e]
                     "
                   />
                 </div>
@@ -202,7 +202,7 @@ export default function SolutionsPreview() {
                     max-w-[390px]
                     text-[12px]
                     leading-[1.5]
-                    text-[#a7977f]
+                    text-[#756b5b]
                     sm:text-[13px]
                   "
                 >
@@ -218,7 +218,7 @@ export default function SolutionsPreview() {
           className="
             hidden
             border-y
-            border-[#b28a50]/20
+            border-[#17130e]/12
             lg:grid
             lg:grid-cols-3
           "
@@ -235,7 +235,7 @@ export default function SolutionsPreview() {
                 flex-col
                 px-5
                 py-5
-                ${index !== items.length - 1 ? "border-r border-[#b28a50]/20" : ""}
+                ${index !== items.length - 1 ? "border-r border-[#17130e]/12" : ""}
               `}
             >
               {/* Equal image area */}
@@ -291,7 +291,7 @@ export default function SolutionsPreview() {
                     h-[18px]
                     text-[9px]
                     tracking-[0.2em]
-                    text-[#a7977f]
+                    text-[#756b5b]
                   "
                 >
                   {item.number}
@@ -324,12 +324,12 @@ export default function SolutionsPreview() {
                     className="
                       mt-1
                       shrink-0
-                      text-[#f3efe7]/35
+                      text-[#17130e]/35
                       transition-all
                       duration-300
                       group-hover:-translate-y-1
                       group-hover:translate-x-1
-                      group-hover:text-[#f3efe7]
+                      group-hover:text-[#17130e]
                     "
                   />
                 </div>
@@ -340,7 +340,7 @@ export default function SolutionsPreview() {
                     max-w-[360px]
                     text-[13px]
                     leading-[1.6]
-                    text-[#a7977f]
+                    text-[#756b5b]
                   "
                 >
                   {item.description}
@@ -400,13 +400,13 @@ export default function SolutionsPreview() {
               md:p-8
             "
           >
-            <div className="hidden text-[#f3efe7] md:block">
+            <div className="hidden text-white md:block">
               <p
                 className="
                   text-[10px]
                   uppercase
                   tracking-[0.24em]
-                  text-[#f3efe7]/65
+                  text-white/65
                 "
               >
                 Muvuti Security Services
@@ -439,11 +439,11 @@ export default function SolutionsPreview() {
                 pl-5
                 pr-1
                 text-[12px]
-                text-[#f3efe7]
+                text-[#17130e]
                 backdrop-blur
                 transition-colors
                 duration-300
-                hover:bg-[#15110d]
+                hover:bg-white
                 md:h-[50px]
                 md:text-[13px]
               "
@@ -459,7 +459,7 @@ export default function SolutionsPreview() {
                   justify-center
                   rounded-full
                   bg-[#15110d]
-                  text-[#f3efe7]
+                  text-white
                   transition-transform
                   duration-300
                   group-hover:rotate-[-35deg]

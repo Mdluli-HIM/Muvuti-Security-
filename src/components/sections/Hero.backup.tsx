@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100svh] overflow-hidden bg-[#173f43] text-white">
+    <section className="relative min-h-[100svh] overflow-hidden bg-[#173f43] text-[#f3efe7]">
       {/* Background image */}
       <motion.div
         initial={{ scale: 1.04, opacity: 0.88 }}
@@ -89,7 +89,7 @@ export default function Hero() {
                   text-[9px]
                   uppercase
                   tracking-[0.28em]
-                  text-white/65
+                  text-[#f3efe7]/65
                   md:mb-8
                 "
               >
@@ -112,7 +112,7 @@ export default function Hero() {
                     font-normal
                     leading-[0.93]
                     tracking-[-0.055em]
-                    text-white
+                    text-[#f3efe7]
                     sm:text-[64px]
                     md:text-[78px]
                     lg:text-[92px]
@@ -141,9 +141,9 @@ export default function Hero() {
                     group inline-flex h-[54px]
                     items-center gap-6
                     rounded-full
-                    bg-[#15373a]
+                    bg-[#15110d]
                     py-1.5 pl-6 pr-1.5
-                    text-[14px] text-white
+                    text-[14px] text-[#f3efe7]
                     transition-all duration-300
                     hover:bg-[#123033]
                   "
@@ -156,7 +156,7 @@ export default function Hero() {
                       items-center justify-center
                       rounded-full
                       bg-[#dcebe3]
-                      text-[#15373a]
+                      text-[#15110d]
                       transition-transform duration-300
                       group-hover:rotate-[-35deg]
                     "
@@ -179,7 +179,7 @@ export default function Hero() {
           }}
           className="
             flex items-end justify-between
-            border-t border-white/12
+            border-t border-[#b28a50]/20
             pt-5
           "
         >
@@ -188,7 +188,7 @@ export default function Hero() {
               max-w-[220px]
               text-[12px]
               leading-[1.45]
-              text-white/78
+              text-[#f3efe7]/78
               md:text-[13px]
             "
           >
@@ -210,9 +210,9 @@ export default function Hero() {
               text-[10px]
               uppercase
               tracking-[0.2em]
-              text-white/65
+              text-[#f3efe7]/65
               transition-colors duration-300
-              hover:text-white
+              hover:text-[#f3efe7]
             "
           >
             Discover more

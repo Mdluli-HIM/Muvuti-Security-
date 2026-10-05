@@ -150,7 +150,7 @@ export default async function ServiceDetailPage({
   }
 
   return (
-    <main className="bg-[#0e0c09] text-[#f3efe7]">
+    <main className="bg-[#f3efe7] text-[#17130e]">
       {/* HERO */}
       <section
         className="
@@ -177,7 +177,7 @@ export default async function ServiceDetailPage({
             text-[9px]
             uppercase
             tracking-[0.2em]
-            text-[#a7977f]
+            text-[#756b5b]
           "
         >
           <ArrowLeft
@@ -198,7 +198,7 @@ export default async function ServiceDetailPage({
             grid
             gap-10
             border-b
-            border-[#b28a50]/20
+            border-[#17130e]/12
             pb-12
             md:pb-16
             lg:grid-cols-[1.15fr_0.85fr]
@@ -215,7 +215,7 @@ export default async function ServiceDetailPage({
                 text-[9px]
                 uppercase
                 tracking-[0.25em]
-                text-[#a7977f]
+                text-[#756b5b]
               "
             >
               <span
@@ -264,7 +264,7 @@ export default async function ServiceDetailPage({
                 mt-5
                 text-[15px]
                 leading-[1.65]
-                text-[#a7977f]
+                text-[#756b5b]
               "
             >
               {detail.intro}
@@ -291,7 +291,7 @@ export default async function ServiceDetailPage({
             min-h-[440px]
             overflow-hidden
             border
-            border-[#b28a50]/20
+            border-[#17130e]/12
             bg-[#17130e]
             md:min-h-[600px]
             lg:min-h-[680px]
@@ -332,7 +332,7 @@ export default async function ServiceDetailPage({
                 flex
                 items-center
                 justify-center
-                text-[#f3efe7]
+                text-white
               "
             >
               <div
@@ -341,7 +341,7 @@ export default async function ServiceDetailPage({
                   h-[260px]
                   w-[260px]
                   border
-                  border-[#b28a50]/20
+                  border-white/10
                   md:h-[360px]
                   md:w-[360px]
                 "
@@ -354,7 +354,7 @@ export default async function ServiceDetailPage({
                   w-[150px]
                   rotate-45
                   border
-                  border-[#b28a50]/25
+                  border-white/15
                   md:h-[200px]
                   md:w-[200px]
                 "
@@ -377,7 +377,7 @@ export default async function ServiceDetailPage({
               flex
               items-end
               justify-between
-              text-[#f3efe7]
+              text-white
               md:bottom-8
               md:left-8
               md:right-8
@@ -389,7 +389,7 @@ export default async function ServiceDetailPage({
                   text-[8px]
                   uppercase
                   tracking-[0.24em]
-                  text-[#f3efe7]/55
+                  text-white/55
                 "
               >
                 Muvuti / {service.number}
@@ -437,7 +437,7 @@ export default async function ServiceDetailPage({
             grid
             gap-12
             border-y
-            border-[#b28a50]/20
+            border-[#17130e]/12
             py-12
             md:py-16
             lg:grid-cols-[0.8fr_1.2fr]
@@ -450,7 +450,7 @@ export default async function ServiceDetailPage({
                 text-[9px]
                 uppercase
                 tracking-[0.24em]
-                text-[#a7977f]
+                text-[#756b5b]
               "
             >
               What we provide
@@ -476,7 +476,7 @@ export default async function ServiceDetailPage({
               className="
                 mt-10
                 border-t
-                border-[#b28a50]/20
+                border-[#17130e]/12
               "
             >
               {detail.points.map(
@@ -490,14 +490,14 @@ export default async function ServiceDetailPage({
                       items-center
                       gap-4
                       border-b
-                      border-[#b28a50]/20
+                      border-[#17130e]/12
                     "
                   >
                     <span
                       className="
                         text-[9px]
                         tracking-[0.18em]
-                        text-[#a7977f]
+                        text-[#756b5b]
                       "
                     >
                       {String(index + 1).padStart(
@@ -550,7 +550,7 @@ export default async function ServiceDetailPage({
             bg-[#17130e]
             px-6
             py-10
-            text-[#f3efe7]
+            text-white
             md:grid-cols-[1fr_auto]
             md:items-end
             md:px-10
@@ -564,7 +564,7 @@ export default async function ServiceDetailPage({
                 text-[9px]
                 uppercase
                 tracking-[0.22em]
-                text-[#f3efe7]/45
+                text-white/45
               "
             >
               Need this service?
@@ -597,9 +597,9 @@ export default async function ServiceDetailPage({
               w-fit
               items-center
               gap-5
-              bg-[#15110d]
+              bg-white
               px-5
-              text-[#f3efe7]
+              text-[#17130e]
             "
           >
             <span

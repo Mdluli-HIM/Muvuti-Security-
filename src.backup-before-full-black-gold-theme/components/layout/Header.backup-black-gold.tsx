@@ -22,7 +22,7 @@ function getCurrentMenuKey(pathname: string) {
 
 export default function Header() {
   const pathname = usePathname();
-const currentMenuKey = getCurrentMenuKey(pathname);
+  const currentMenuKey = getCurrentMenuKey(pathname);
 
   const [open, setOpen] = useState(false);
   const [hoveredKey, setHoveredKey] = useState<string | null>(null);
@@ -166,15 +166,15 @@ const currentMenuKey = getCurrentMenuKey(pathname);
             }}
           >
             <div
-              className="muvuti-closed-nav 
+              className="
                 pointer-events-auto
                 flex
                 w-full
                 max-w-[340px]
                 items-stretch
-                border border-[rgba(178,138,80,0.22)]
-                bg-[linear-gradient(180deg,rgba(21,17,13,0.96),rgba(24,19,14,0.98))]/72
-                text-[#f3efe7]
+                border border-white/10
+                bg-[#15110d]/72
+                text-white
                 shadow-[0_10px_30px_rgba(0,0,0,0.08)]
                 backdrop-blur-xl
               "
@@ -188,7 +188,7 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                   w-[58px]
                   items-center
                   justify-center
-                  border-r border-[rgba(178,138,80,0.22)]
+                  border-r border-white/10
                   transition-opacity
                   duration-300
                   hover:opacity-80
@@ -220,7 +220,7 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                   font-medium
                   uppercase
                   tracking-[0.22em]
-                  text-[#f3efe7]/85
+                  text-white/85
                 "
               >
                 {currentMenuKey}
@@ -237,10 +237,10 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                   w-[48px]
                   items-center
                   justify-center
-                  border-l border-[rgba(178,138,80,0.22)]
+                  border-l border-white/10
                   transition-all
                   duration-300
-                  hover:bg-[#b28a50]/10/5
+                  hover:bg-white/5
                   md:h-[50px]
                 "
               >
@@ -262,7 +262,7 @@ const currentMenuKey = getCurrentMenuKey(pathname);
       <AnimatePresence>
         {open && (
           <motion.div
-            className="muvuti-nav-backdrop fixed inset-0 z-[60]"
+            className="fixed inset-0 z-[60]"
             initial={{
               opacity: 0,
             }}
@@ -283,7 +283,7 @@ const currentMenuKey = getCurrentMenuKey(pathname);
             <motion.div
               className="
                 absolute inset-0
-                bg-[#0e0c09]/55
+                bg-[#0b2c2f]/50
                 backdrop-blur-[7px]
               "
               initial={{
@@ -322,9 +322,9 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                   w-full
                   max-w-[460px]
                   overflow-visible
-                  border border-[rgba(178,138,80,0.22)]
+                  border border-white/10
                   bg-[rgba(16,56,59,0.96)]
-                  text-[#f3efe7]
+                  text-white
                   shadow-[0_28px_90px_rgba(0,0,0,0.3)]
                   backdrop-blur-[18px]
                 "
@@ -380,7 +380,6 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                   className="
                     absolute
                     left-1/2
-                muvuti-floating-logo
                     -top-[80px]
                     z-30
                     -translate-x-1/2
@@ -408,8 +407,8 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                         items-center
                         justify-center
                         border
-                        border-[#b28a50]/25
-                        bg-[linear-gradient(180deg,rgba(21,17,13,0.96),rgba(24,19,14,0.98))]
+                        border-white/15
+                        bg-[#15110d]
                         shadow-[0_18px_45px_rgba(0,0,0,0.28)]
                         backdrop-blur-xl
                         transition-all
@@ -472,7 +471,7 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                           text-[9px]
                           uppercase
                           tracking-[0.28em]
-                          text-[#f3efe7]/50
+                          text-white/50
                         "
                       >
                         Menu
@@ -484,7 +483,7 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                           text-[9px]
                           uppercase
                           tracking-[0.25em]
-                          text-[#f3efe7]/80
+                          text-white/80
                         "
                       >
                         Muvuti Security
@@ -502,12 +501,12 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                         w-10
                         items-center
                         justify-center
-                        border border-[#b28a50]/30
-                        text-[#f3efe7]
+                        border border-white/20
+                        text-white
                         transition-all
                         duration-300
                         hover:border-white/40
-                        hover:bg-[#b28a50]/10/5
+                        hover:bg-white/5
                       "
                       initial={{
                         opacity: 0,
@@ -645,10 +644,10 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                               font-light
                               leading-[0.96]
                               tracking-[-0.055em]
-                              text-[#f3efe7]
+                              text-white
                               transition-colors
                               duration-300
-                              hover:text-[#f3efe7]/80
+                              hover:text-white/80
                             "
                           >
                             <span
@@ -675,11 +674,11 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                       grid
                       gap-5
                       border-t
-                      border-[rgba(178,138,80,0.22)]
+                      border-white/10
                       pt-6
                       text-[10px]
                       leading-[1.65]
-                      text-[#f3efe7]/60
+                      text-white/60
                       sm:grid-cols-2
                     "
                     initial={{
@@ -703,7 +702,7 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                     }}
                   >
                     <div>
-                      <p className="text-[#f3efe7]/80">
+                      <p className="text-white/80">
                         Protection · Presence · Response
                       </p>
 
@@ -721,7 +720,7 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                           block
                           transition-colors
                           duration-300
-                          hover:text-[#f3efe7]
+                          hover:text-white
                         "
                       >
                         {company.email}
@@ -733,7 +732,7 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                           mt-2 block
                           transition-colors
                           duration-300
-                          hover:text-[#f3efe7]
+                          hover:text-white
                         "
                       >
                         {company.phone}
@@ -766,8 +765,7 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                     <Link
                       href="/contact"
                       onClick={closeMenu}
-                      className="muvuti-btn-secondary
-              
+                      className="
                         group
                         mt-7
                         inline-flex
@@ -779,7 +777,7 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                         text-[#15110d]
                         transition-colors
                         duration-300
-                        hover:bg-[#b28a50]/10
+                        hover:bg-white
                       "
                     >
                       <ArrowUpRight

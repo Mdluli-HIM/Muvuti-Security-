@@ -46,7 +46,7 @@ const team = [
 
 export default function AboutPage() {
   return (
-    <main className="bg-[#0e0c09] text-[#f3efe7]">
+    <main className="bg-[#f3efe7] text-[#17130e]">
       {/* ABOUT HERO */}
       <section
         className="
@@ -69,12 +69,12 @@ export default function AboutPage() {
             min-h-[52svh]
             overflow-hidden
             
-            border-[1px]
-            border-[#b28a50]/35
+            border-[7px]
+            border-white
             bg-[#17130e]
             sm:min-h-[58svh]
             
-            md:border-[1px]
+            md:border-[8px]
             lg:min-h-[66svh]
           "
         >
@@ -116,7 +116,7 @@ export default function AboutPage() {
                   text-[9px]
                   uppercase
                   tracking-[0.28em]
-                  text-[#f3efe7]/55
+                  text-white/55
                 "
               >
                 Muvuti Security Services
@@ -128,7 +128,7 @@ export default function AboutPage() {
                   font-normal
                   leading-[0.92]
                   tracking-[-0.055em]
-                  text-[#f3efe7]
+                  text-white
                   sm:text-[64px]
                   md:text-[78px]
                   lg:text-[92px]
@@ -158,7 +158,7 @@ export default function AboutPage() {
       >
         <div
           className="
-            bg-[#15110d]
+            bg-[#f7f3ec]
             px-5
             py-16
             sm:px-7
@@ -178,7 +178,7 @@ export default function AboutPage() {
               text-[9px]
               uppercase
               tracking-[0.16em]
-              text-[#a7977f]
+              text-[#756b5b]
             "
           >
             Principles
@@ -198,7 +198,7 @@ export default function AboutPage() {
             "
           >
             Muvuti is built around a simple idea:
-            <span className="text-[#f3efe7]/45">
+            <span className="text-[#17130e]/45">
               {" "}
               protection should feel dependable, prepared and clear.
             </span>
@@ -228,8 +228,8 @@ export default function AboutPage() {
                     flex-col
                     justify-between
                     border
-                    border-[#b28a50]/20
-                    bg-[#15110d]
+                    border-[#17130e]/12
+                    bg-white
                     p-6
                     md:min-h-[330px]
                     md:p-7
@@ -243,9 +243,9 @@ export default function AboutPage() {
                       items-center
                       justify-center
                       border
-                      border-[#b28a50]/25
+                      border-[#17130e]/15
                       bg-[#17130e]
-                      text-[#f3efe7]
+                      text-white
                     "
                   >
                     <Icon size={17} strokeWidth={1.6} />
@@ -268,7 +268,7 @@ export default function AboutPage() {
                         max-w-[300px]
                         text-[13px]
                         leading-[1.55]
-                        text-[#a7977f]
+                        text-[#756b5b]
                         md:text-[14px]
                       "
                     >
@@ -301,7 +301,7 @@ export default function AboutPage() {
             grid
             gap-10
             border-y
-            border-[#b28a50]/20
+            border-[#17130e]/12
             py-12
             md:py-16
             lg:grid-cols-[0.8fr_1.2fr]
@@ -314,7 +314,7 @@ export default function AboutPage() {
                 text-[9px]
                 uppercase
                 tracking-[0.25em]
-                text-[#a7977f]
+                text-[#756b5b]
               "
             >
               Our approach
@@ -344,7 +344,7 @@ export default function AboutPage() {
                 gap-6
                 text-[14px]
                 leading-[1.65]
-                text-[#a7977f]
+                text-[#756b5b]
                 md:grid-cols-2
                 md:text-[15px]
               "
@@ -386,11 +386,11 @@ export default function AboutPage() {
                   justify-center
                   rounded-full
                   border
-                  border-[#b28a50]/25
+                  border-[#17130e]/20
                   transition-all
                   duration-300
                   group-hover:bg-[#17130e]
-                  group-hover:text-[#f3efe7]
+                  group-hover:text-white
                 "
               >
                 <ArrowUpRight size={14} />
@@ -401,7 +401,7 @@ export default function AboutPage() {
       </section>
 
       {/* TEAM */}
-      <section className="bg-[#15110d] py-20 md:py-28 lg:py-32">
+      <section className="bg-white py-20 md:py-28 lg:py-32">
         <div
           className="
             mx-auto
@@ -417,13 +417,13 @@ export default function AboutPage() {
             className="
               inline-flex
               rounded-[4px]
-              bg-[#0e0c09]
+              bg-[#f3efe7]
               px-3
               py-1.5
               text-[9px]
               uppercase
               tracking-[0.16em]
-              text-[#a7977f]
+              text-[#756b5b]
             "
           >
             Our team
@@ -465,7 +465,7 @@ export default function AboutPage() {
                     justify-center
                     overflow-hidden
                     border
-                    border-[#b28a50]/20
+                    border-[#17130e]/12
                     bg-[#dfe7e2]
                   "
                 >
@@ -478,68 +478,18 @@ export default function AboutPage() {
                       className="object-cover grayscale"
                     />
                   ) : (
-                    <div
+                    <span
                       className="
-                        relative
-                        flex
-                        h-full
-                        min-h-[300px]
-                        w-full
-                        items-center
-                        justify-center
-                        overflow-hidden
-                        bg-[#15110d]
-                        text-[#d8bb84]
+                        text-[72px]
+                        font-normal
+                        tracking-[-0.07em]
+                        text-[#17130e]/18
+                        md:text-[92px]
                       "
                     >
-                      <div
-                        className="
-                          absolute
-                          h-[150px]
-                          w-[150px]
-                          border
-                          border-[#b28a50]/20
-                        "
-                      />
-
-                      <div
-                        className="
-                          absolute
-                          h-[82px]
-                          w-[82px]
-                          rotate-45
-                          border
-                          border-[#b28a50]/30
-                        "
-                      />
-
-                      <span
-                        className="
-                          relative
-                          z-10
-                          text-[34px]
-                          font-light
-                          tracking-[-0.04em]
-                        "
-                      >
-                        {person.initials}
-                      </span>
-
-                      <span
-                        className="
-                          absolute
-                          bottom-5
-                          left-5
-                          text-[7px]
-                          uppercase
-                          tracking-[0.24em]
-                          text-[#a7977f]
-                        "
-                      >
-                        Muvuti / Team
-                      </span>
-                    </div>
-)}
+                      {person.initials}
+                    </span>
+                  )}
                 </div>
 
                 <div className="pt-5">
@@ -559,7 +509,7 @@ export default function AboutPage() {
                       text-[11px]
                       uppercase
                       tracking-[0.16em]
-                      text-[#a7977f]
+                      text-[#756b5b]
                     "
                   >
                     {person.role}

@@ -262,7 +262,7 @@ const currentMenuKey = getCurrentMenuKey(pathname);
       <AnimatePresence>
         {open && (
           <motion.div
-            className="muvuti-nav-backdrop fixed inset-0 z-[60]"
+            className="fixed inset-0 z-[60]"
             initial={{
               opacity: 0,
             }}
@@ -283,7 +283,7 @@ const currentMenuKey = getCurrentMenuKey(pathname);
             <motion.div
               className="
                 absolute inset-0
-                bg-[#0e0c09]/55
+                bg-[#0b2c2f]/50
                 backdrop-blur-[7px]
               "
               initial={{

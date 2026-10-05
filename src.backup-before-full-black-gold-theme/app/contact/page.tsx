@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="bg-[#0e0c09] text-[#f3efe7]">
+    <main className="bg-[#f3efe7] text-[#17130e]">
       {/* HERO */}
       <section
         className="
@@ -95,7 +95,7 @@ export default function ContactPage() {
               px-6
               pb-6
               pt-24
-              text-[#f3efe7]
+              text-white
               md:min-h-[62svh]
               md:px-10
               md:pb-9
@@ -110,7 +110,7 @@ export default function ContactPage() {
                   text-[9px]
                   uppercase
                   tracking-[0.28em]
-                  text-[#f3efe7]/60
+                  text-white/60
                 "
               >
                 Muvuti Security Services
@@ -138,7 +138,7 @@ export default function ContactPage() {
                 items-end
                 justify-between
                 border-t
-                border-[#b28a50]/25
+                border-white/15
                 pt-5
               "
             >
@@ -147,7 +147,7 @@ export default function ContactPage() {
                   max-w-[280px]
                   text-[12px]
                   leading-[1.5]
-                  text-[#f3efe7]/70
+                  text-white/70
                 "
               >
                 Protection starts with a conversation.
@@ -155,7 +155,7 @@ export default function ContactPage() {
 
               <ArrowDown
                 size={16}
-                className="text-[#f3efe7]/55"
+                className="text-white/55"
               />
             </div>
           </div>
@@ -202,7 +202,7 @@ export default function ContactPage() {
                   text-[9px]
                   uppercase
                   tracking-[0.25em]
-                  text-[#a7977f]
+                  text-[#756b5b]
                 "
               >
                 <span
@@ -239,7 +239,7 @@ export default function ContactPage() {
                   max-w-[480px]
                   text-[14px]
                   leading-[1.65]
-                  text-[#a7977f]
+                  text-[#756b5b]
                   md:text-[15px]
                 "
               >
@@ -254,7 +254,7 @@ export default function ContactPage() {
                 grid
                 gap-0
                 border-t
-                border-[#b28a50]/20
+                border-[#17130e]/12
                 sm:grid-cols-2
                 lg:mt-16
               "
@@ -263,7 +263,7 @@ export default function ContactPage() {
               <div
                 className="
                   border-b
-                  border-[#b28a50]/20
+                  border-[#17130e]/12
                   py-6
                   sm:border-r
                   sm:pr-6
@@ -281,7 +281,7 @@ export default function ContactPage() {
                     text-[9px]
                     uppercase
                     tracking-[0.2em]
-                    text-[#a7977f]
+                    text-[#756b5b]
                   "
                 >
                   Phone
@@ -306,7 +306,7 @@ export default function ContactPage() {
               <div
                 className="
                   border-b
-                  border-[#b28a50]/20
+                  border-[#17130e]/12
                   py-6
                   sm:pl-6
                 "
@@ -323,7 +323,7 @@ export default function ContactPage() {
                     text-[9px]
                     uppercase
                     tracking-[0.2em]
-                    text-[#a7977f]
+                    text-[#756b5b]
                   "
                 >
                   Email
@@ -349,7 +349,7 @@ export default function ContactPage() {
               <div
                 className="
                   border-b
-                  border-[#b28a50]/20
+                  border-[#17130e]/12
                   py-6
                   sm:border-r
                   sm:pr-6
@@ -367,7 +367,7 @@ export default function ContactPage() {
                     text-[9px]
                     uppercase
                     tracking-[0.2em]
-                    text-[#a7977f]
+                    text-[#756b5b]
                   "
                 >
                   Location
@@ -389,7 +389,7 @@ export default function ContactPage() {
               <div
                 className="
                   border-b
-                  border-[#b28a50]/20
+                  border-[#17130e]/12
                   py-6
                   sm:pl-6
                 "
@@ -406,7 +406,7 @@ export default function ContactPage() {
                     text-[9px]
                     uppercase
                     tracking-[0.2em]
-                    text-[#a7977f]
+                    text-[#756b5b]
                   "
                 >
                   Social
@@ -425,10 +425,10 @@ export default function ContactPage() {
                       items-center
                       justify-center
                       border
-                      border-[#b28a50]/25
+                      border-[#17130e]/15
                       transition-colors
                       hover:bg-[#17130e]
-                      hover:text-[#f3efe7]
+                      hover:text-white
                     "
                   >
                     <FaInstagram size={15} />
@@ -446,10 +446,10 @@ export default function ContactPage() {
                       items-center
                       justify-center
                       border
-                      border-[#b28a50]/25
+                      border-[#17130e]/15
                       transition-colors
                       hover:bg-[#17130e]
-                      hover:text-[#f3efe7]
+                      hover:text-white
                     "
                   >
                     <FaFacebookF size={14} />
@@ -481,8 +481,8 @@ export default function ContactPage() {
         <div
           className="
             border
-            border-[#b28a50]/20
-            bg-[#15110d]
+            border-[#17130e]/12
+            bg-white
           "
         >
           <div
@@ -491,7 +491,7 @@ export default function ContactPage() {
               flex-col
               gap-4
               border-b
-              border-[#b28a50]/20
+              border-[#17130e]/12
               p-5
               sm:flex-row
               sm:items-center
@@ -505,7 +505,7 @@ export default function ContactPage() {
                   text-[9px]
                   uppercase
                   tracking-[0.2em]
-                  text-[#a7977f]
+                  text-[#756b5b]
                 "
               >
                 Our location

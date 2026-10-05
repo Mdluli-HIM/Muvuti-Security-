@@ -17,8 +17,8 @@ export default function ServicesPage() {
       className="
         min-h-screen
         overflow-hidden
-        bg-[#0e0c09]
-        text-[#f3efe7]
+        bg-[#f3efe7]
+        text-[#17130e]
       "
     >
       {/* INTRO */}
@@ -50,7 +50,7 @@ export default function ServicesPage() {
             grid
             gap-10
             border-b
-            border-[#b28a50]/20
+            border-[#17130e]/12
             pb-12
             md:pb-16
             lg:grid-cols-[1.15fr_0.85fr]
@@ -67,7 +67,7 @@ export default function ServicesPage() {
                 text-[9px]
                 uppercase
                 tracking-[0.25em]
-                text-[#a7977f]
+                text-[#756b5b]
               "
             >
               <span
@@ -111,7 +111,7 @@ export default function ServicesPage() {
               className="
                 text-[14px]
                 leading-[1.65]
-                text-[#a7977f]
+                text-[#756b5b]
                 md:text-[15px]
               "
             >
@@ -186,7 +186,7 @@ export default function ServicesPage() {
             grid
             gap-8
             border-y
-            border-[#b28a50]/20
+            border-[#17130e]/12
             py-10
             md:grid-cols-[1fr_auto]
             md:items-end
@@ -220,7 +220,7 @@ export default function ServicesPage() {
               gap-5
               bg-[#17130e]
               px-5
-              text-[#f3efe7]
+              text-white
             "
           >
             <span

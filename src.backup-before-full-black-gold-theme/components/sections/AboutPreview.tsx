@@ -10,7 +10,7 @@ const principles = [
 
 export default function AboutPreview() {
   return (
-    <section className="bg-[#0e0c09] text-[#f3efe7]">
+    <section className="bg-[#e6dccd] text-[#17130e]">
       <div
         className="
           mx-auto
@@ -69,7 +69,7 @@ export default function AboutPreview() {
               <br />
               about being seen.
               <br />
-              <span className="text-[#f3efe7]/45">
+              <span className="text-[#17130e]/45">
                 It&apos;s about being ready.
               </span>
             </h2>
@@ -104,7 +104,7 @@ export default function AboutPreview() {
               className="
                 mt-9
                 border-t
-                border-[#b28a50]/25
+                border-[#17130e]/15
               "
             >
               {principles.map((principle, index) => (
@@ -116,7 +116,7 @@ export default function AboutPreview() {
                     grid-cols-[36px_1fr]
                     items-center
                     border-b
-                    border-[#b28a50]/25
+                    border-[#17130e]/15
                   "
                 >
                   <span
@@ -154,7 +154,7 @@ export default function AboutPreview() {
                 text-[11px]
                 uppercase
                 tracking-[0.18em]
-                text-[#f3efe7]
+                text-[#17130e]
               "
             >
               Learn about Muvuti
@@ -168,11 +168,11 @@ export default function AboutPreview() {
                   justify-center
                   rounded-full
                   border
-                  border-[#b28a50]/25
+                  border-[#17130e]/20
                   transition-all
                   duration-300
                   group-hover:bg-[#17130e]
-                  group-hover:text-[#f3efe7]
+                  group-hover:text-white
                 "
               >
                 <ArrowUpRight
@@ -233,7 +233,7 @@ export default function AboutPreview() {
               items-end
               justify-between
               gap-5
-              text-[#f3efe7]
+              text-white
               md:bottom-8
               md:left-8
               md:right-8
@@ -245,7 +245,7 @@ export default function AboutPreview() {
                   text-[9px]
                   uppercase
                   tracking-[0.24em]
-                  text-[#f3efe7]/60
+                  text-white/60
                 "
               >
                 Muvuti Security Services

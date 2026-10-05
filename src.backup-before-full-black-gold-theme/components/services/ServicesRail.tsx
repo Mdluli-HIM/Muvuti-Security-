@@ -49,30 +49,30 @@ const visualMap: Record<
 function getTone(tone: "light" | "mint" | "dark") {
   if (tone === "dark") {
     return {
-      card: "bg-[#15110d] text-[#f3efe7]",
-      muted: "text-[#f3efe7]/55",
-      border: "border-[#b28a50]/20",
+      card: "bg-[#17130e] text-white",
+      muted: "text-white/55",
+      border: "border-white/12",
       circle:
-        "border-[#b28a50]/30 bg-[#15110d] text-[#f3efe7]",
+        "border-white/20 bg-white text-[#17130e]",
     };
   }
 
   if (tone === "mint") {
     return {
-      card: "bg-[#211a11] text-[#f3efe7]",
-      muted: "text-[#a7977f]",
-      border: "border-[#b28a50]/20",
+      card: "bg-[#e6dccd] text-[#17130e]",
+      muted: "text-[#756b5b]",
+      border: "border-[#17130e]/12",
       circle:
-        "border-[#b28a50]/25 bg-[#15110d] text-[#f3efe7]",
+        "border-[#17130e]/15 bg-white text-[#17130e]",
     };
   }
 
   return {
-    card: "bg-[#15110d] text-[#f3efe7]",
-    muted: "text-[#a7977f]",
-    border: "border-[#b28a50]/20",
+    card: "bg-[#f7f3ec] text-[#17130e]",
+    muted: "text-[#756b5b]",
+    border: "border-[#17130e]/12",
     circle:
-      "border-[#b28a50]/25 bg-[#15110d] text-[#f3efe7]",
+      "border-[#17130e]/15 bg-white text-[#17130e]",
   };
 }
 
@@ -92,25 +92,6 @@ export default function ServicesRail() {
 
     if (!rail) return;
 
-    const target = event.target as HTMLElement | null;
-
-    if (
-      target?.closest(
-        "a, button, [role='button']"
-      )
-    ) {
-      dragged.current = false;
-      setDragging(false);
-      return;
-    }
-
-    if (
-      event.pointerType !== "mouse" ||
-      event.button !== 0
-    ) {
-      return;
-    }
-
     startX.current = event.clientX;
     startScroll.current = rail.scrollLeft;
 
@@ -126,18 +107,12 @@ export default function ServicesRail() {
   ) {
     const rail = railRef.current;
 
-    if (
-      !rail ||
-      !dragging ||
-      event.pointerType !== "mouse"
-    ) {
-      return;
-    }
+    if (!rail || !dragging) return;
 
     const distance =
       event.clientX - startX.current;
 
-    if (Math.abs(distance) > 10) {
+    if (Math.abs(distance) > 5) {
       dragged.current = true;
     }
 
@@ -150,12 +125,8 @@ export default function ServicesRail() {
   ) {
     const rail = railRef.current;
 
-    if (
-      rail?.hasPointerCapture(event.pointerId)
-    ) {
-      rail.releasePointerCapture(
-        event.pointerId
-      );
+    if (rail?.hasPointerCapture(event.pointerId)) {
+      rail.releasePointerCapture(event.pointerId);
     }
 
     setDragging(false);
@@ -177,9 +148,9 @@ export default function ServicesRail() {
           items-center
           justify-center
           border
-          border-[#b28a50]/20
-          bg-[#15110d]/95
-          text-[#f3efe7]
+          border-[#17130e]/12
+          bg-white/95
+          text-[#17130e]
           shadow-[0_10px_30px_rgba(0,0,0,0.06)]
           backdrop-blur
           md:flex
@@ -226,7 +197,6 @@ export default function ServicesRail() {
           select-none
           gap-3
           overflow-x-auto
-          touch-pan-y
           overscroll-x-contain
           pb-4
           pr-[10vw]

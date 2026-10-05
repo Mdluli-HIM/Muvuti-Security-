@@ -39,11 +39,11 @@ export default function Footer() {
   return (
     <footer
       className="
-        bg-[#0e0c09]
+        bg-[#f3efe7]
         px-5
         pb-5
         pt-8
-        text-[#f3efe7]
+        text-white
         md:px-8
         md:pb-8
         lg:px-12
@@ -89,7 +89,7 @@ export default function Footer() {
               "
             >
               Protection you can rely on.
-              <span className="text-[#d8bb84]/55">
+              <span className="text-white/45">
                 {" "}
                 Every hour. Every day.
               </span>
@@ -107,14 +107,14 @@ export default function Footer() {
                 items-center
                 gap-5
                 border
-                border-[#b28a50]/25
+                border-white/15
                 px-5
                 text-[10px]
                 uppercase
                 tracking-[0.2em]
                 transition-colors
                 duration-300
-                hover:bg-[#b28a50]/10
+                hover:bg-white
                 hover:text-[#15110d]
               "
             >
@@ -149,7 +149,7 @@ export default function Footer() {
                   text-[9px]
                   uppercase
                   tracking-[0.2em]
-                  text-[#f3efe7]/40
+                  text-white/40
                 "
               >
                 Contact
@@ -165,9 +165,9 @@ export default function Footer() {
                     gap-3
                     text-[12px]
                     leading-[1.5]
-                    text-[#f3efe7]/70
+                    text-white/70
                     transition-colors
-                    hover:text-[#f3efe7]
+                    hover:text-white
                   "
                 >
                   <Phone
@@ -188,9 +188,9 @@ export default function Footer() {
                     gap-3
                     text-[12px]
                     leading-[1.5]
-                    text-[#f3efe7]/70
+                    text-white/70
                     transition-colors
-                    hover:text-[#f3efe7]
+                    hover:text-white
                   "
                 >
                   <Mail
@@ -211,7 +211,7 @@ export default function Footer() {
                     gap-3
                     text-[12px]
                     leading-[1.5]
-                    text-[#f3efe7]/70
+                    text-white/70
                   "
                 >
                   <MapPin
@@ -232,7 +232,7 @@ export default function Footer() {
                   text-[9px]
                   uppercase
                   tracking-[0.2em]
-                  text-[#f3efe7]/40
+                  text-white/40
                 "
               >
                 Company
@@ -246,11 +246,11 @@ export default function Footer() {
                     className="
                       w-fit
                       text-[12px]
-                      text-[#f3efe7]/70
+                      text-white/70
                       transition-all
                       duration-300
                       hover:translate-x-1
-                      hover:text-[#f3efe7]
+                      hover:text-white
                     "
                   >
                     {item.label}
@@ -266,7 +266,7 @@ export default function Footer() {
                   text-[9px]
                   uppercase
                   tracking-[0.2em]
-                  text-[#f3efe7]/40
+                  text-white/40
                 "
               >
                 Services
@@ -281,11 +281,11 @@ export default function Footer() {
                       w-fit
                       text-[12px]
                       leading-[1.4]
-                      text-[#f3efe7]/70
+                      text-white/70
                       transition-all
                       duration-300
                       hover:translate-x-1
-                      hover:text-[#f3efe7]
+                      hover:text-white
                     "
                   >
                     {item.label}
@@ -301,7 +301,7 @@ export default function Footer() {
                   text-[9px]
                   uppercase
                   tracking-[0.2em]
-                  text-[#f3efe7]/40
+                  text-white/40
                 "
               >
                 Follow us
@@ -320,11 +320,11 @@ export default function Footer() {
                     items-center
                     justify-center
                     border
-                    border-[#b28a50]/25
-                    text-[#f3efe7]/70
+                    border-white/15
+                    text-white/70
                     transition-all
                     duration-300
-                    hover:bg-[#b28a50]/10
+                    hover:bg-white
                     hover:text-[#15110d]
                   "
                 >
@@ -343,11 +343,11 @@ export default function Footer() {
                     items-center
                     justify-center
                     border
-                    border-[#b28a50]/25
-                    text-[#f3efe7]/70
+                    border-white/15
+                    text-white/70
                     transition-all
                     duration-300
-                    hover:bg-[#b28a50]/10
+                    hover:bg-white
                     hover:text-[#15110d]
                   "
                 >
@@ -366,12 +366,12 @@ export default function Footer() {
             flex-col
             gap-5
             border-t
-            border-[#b28a50]/20
+            border-white/12
             pt-6
             text-[9px]
             uppercase
             tracking-[0.14em]
-            text-[#f3efe7]/35
+            text-white/35
             sm:flex-row
             sm:items-center
             sm:justify-between

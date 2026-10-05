@@ -41,9 +41,8 @@ export default function ContactForm() {
     <form
       onSubmit={handleSubmit}
       className="
-        muvuti-form
         border
-        border-[#b28a50]/20
+        border-[#17130e]/12
         bg-[#f4f6f4]
         p-6
         md:p-8
@@ -56,7 +55,7 @@ export default function ContactForm() {
             text-[9px]
             uppercase
             tracking-[0.22em]
-            text-[#a7977f]
+            text-[#756b5b]
           "
         >
           Send an enquiry
@@ -81,7 +80,7 @@ export default function ContactForm() {
             max-w-[440px]
             text-[13px]
             leading-[1.6]
-            text-[#a7977f]
+            text-[#756b5b]
           "
         >
           Tell us what you need protected and we&apos;ll help you understand
@@ -90,14 +89,14 @@ export default function ContactForm() {
       </div>
 
       <div className="mt-10">
-        <label className="block border-b border-[#b28a50]/25 pb-3">
+        <label className="block border-b border-[#17130e]/15 pb-3">
           <span
             className="
               block
               text-[9px]
               uppercase
               tracking-[0.18em]
-              text-[#a7977f]
+              text-[#756b5b]
             "
           >
             Full name
@@ -114,20 +113,20 @@ export default function ContactForm() {
               bg-transparent
               text-[15px]
               outline-none
-              placeholder:text-[#a7977f]/60
+              placeholder:text-[#17130e]/25
             "
             placeholder="Your name"
           />
         </label>
 
-        <label className="mt-7 block border-b border-[#b28a50]/25 pb-3">
+        <label className="mt-7 block border-b border-[#17130e]/15 pb-3">
           <span
             className="
               block
               text-[9px]
               uppercase
               tracking-[0.18em]
-              text-[#a7977f]
+              text-[#756b5b]
             "
           >
             Email
@@ -144,20 +143,20 @@ export default function ContactForm() {
               bg-transparent
               text-[15px]
               outline-none
-              placeholder:text-[#a7977f]/60
+              placeholder:text-[#17130e]/25
             "
             placeholder="you@email.com"
           />
         </label>
 
-        <label className="mt-7 block border-b border-[#b28a50]/25 pb-3">
+        <label className="mt-7 block border-b border-[#17130e]/15 pb-3">
           <span
             className="
               block
               text-[9px]
               uppercase
               tracking-[0.18em]
-              text-[#a7977f]
+              text-[#756b5b]
             "
           >
             Subject
@@ -172,20 +171,20 @@ export default function ContactForm() {
               bg-transparent
               text-[15px]
               outline-none
-              placeholder:text-[#a7977f]/60
+              placeholder:text-[#17130e]/25
             "
             placeholder="What do you need help with?"
           />
         </label>
 
-        <label className="mt-7 block border-b border-[#b28a50]/25 pb-3">
+        <label className="mt-7 block border-b border-[#17130e]/15 pb-3">
           <span
             className="
               block
               text-[9px]
               uppercase
               tracking-[0.18em]
-              text-[#a7977f]
+              text-[#756b5b]
             "
           >
             Message
@@ -203,7 +202,7 @@ export default function ContactForm() {
               text-[15px]
               leading-[1.6]
               outline-none
-              placeholder:text-[#a7977f]/60
+              placeholder:text-[#17130e]/25
             "
             placeholder="Tell us about your security requirements..."
           />
@@ -224,7 +223,7 @@ export default function ContactForm() {
           gap-5
           bg-[#17130e]
           px-5
-          text-[#f3efe7]
+          text-white
           transition-colors
           duration-300
           hover:bg-[#194247]

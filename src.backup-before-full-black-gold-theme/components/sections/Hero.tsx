@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100svh] overflow-hidden bg-[#173f43] text-[#f3efe7]">
+    <section className="relative min-h-[100svh] overflow-hidden bg-[#173f43] text-white">
       {/* Background image */}
       <motion.div
         initial={{ scale: 1.04, opacity: 0.88 }}
@@ -86,7 +86,7 @@ export default function Hero() {
                   text-[9px]
                   uppercase
                   tracking-[0.28em]
-                  text-[#f3efe7]/78
+                  text-white/78
                   md:mb-8
                 "
               >
@@ -109,7 +109,7 @@ export default function Hero() {
                     font-normal
                     leading-[0.93]
                     tracking-[-0.055em]
-                    text-[#f3efe7]/[0.97]
+                    text-white/[0.97]
                     drop-shadow-[0_2px_16px_rgba(0,0,0,0.16)]
                     sm:text-[62px]
                     md:text-[74px]
@@ -143,7 +143,7 @@ export default function Hero() {
                     rounded-full
                     bg-[#15110d]
                     py-1.5 pl-6 pr-1.5
-                    text-[14px] text-[#f3efe7]
+                    text-[14px] text-white
                     transition-all duration-300
                     hover:bg-[#123033]
                   "
@@ -179,7 +179,7 @@ export default function Hero() {
           }}
           className="
             flex items-end justify-between
-            border-t border-[#b28a50]/20
+            border-t border-white/12
             pt-5
           "
         >
@@ -188,7 +188,7 @@ export default function Hero() {
               max-w-[220px]
               text-[12px]
               leading-[1.45]
-              text-[#f3efe7]/78
+              text-white/78
               md:text-[13px]
             "
           >
@@ -210,9 +210,9 @@ export default function Hero() {
               text-[10px]
               uppercase
               tracking-[0.2em]
-              text-[#f3efe7]/65
+              text-white/65
               transition-colors duration-300
-              hover:text-[#f3efe7]
+              hover:text-white
             "
           >
             Discover more

@@ -1,0 +1,1025 @@
+@import "tailwindcss" source(none);
+
+@source "../";
+
+:root {
+  --background: #f3efe7;
+  --foreground: #17130e;
+
+  --surface: #e6dccd;
+  --surface-dark: #15110d;
+
+  --muted: #756b5b;
+
+  --gold: #b28a50;
+  --gold-dark: #8d6738;
+  --gold-soft: #d8bb84;
+
+  --border: rgba(178, 138, 80, 0.22);
+
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   MUVUTI TACTICAL INTERACTION SYSTEM
+   ========================================================= */
+
+@media (hover: hover) and (pointer: fine) and (min-width: 768px) {
+  html.muvuti-custom-cursor,
+  html.muvuti-custom-cursor body,
+  html.muvuti-custom-cursor a,
+  html.muvuti-custom-cursor button {
+    cursor: none !important;
+  }
+
+  html.muvuti-custom-cursor input,
+  html.muvuti-custom-cursor textarea,
+  html.muvuti-custom-cursor select,
+  html.muvuti-custom-cursor [contenteditable="true"] {
+    cursor: text !important;
+  }
+}
+
+.muvuti-reticle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  z-index: 99999;
+  pointer-events: none;
+
+  margin-left: -15px;
+  margin-top: -15px;
+
+  opacity: 0;
+
+  transition:
+    width 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    height 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    margin 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 180ms ease;
+}
+
+.muvuti-reticle.is-visible {
+  opacity: 1;
+}
+
+.muvuti-reticle.is-interactive {
+  width: 38px;
+  height: 38px;
+
+  margin-left: -19px;
+  margin-top: -19px;
+}
+
+.muvuti-reticle-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 999px;
+
+  background: #d8bb84;
+
+  transform: translate(-50%, -50%);
+
+  transition:
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 260ms ease;
+}
+
+.muvuti-reticle.is-interactive .muvuti-reticle-dot {
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+.muvuti-reticle-corner {
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  border-color: rgba(184, 221, 213, 0.9);
+
+  transition:
+    width 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    height 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.corner-tl {
+  top: 0;
+  left: 0;
+
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+.corner-tr {
+  top: 0;
+  right: 0;
+
+  border-top: 1px solid;
+  border-right: 1px solid;
+}
+
+.corner-bl {
+  bottom: 0;
+  left: 0;
+
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+}
+
+.corner-br {
+  right: 0;
+  bottom: 0;
+
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.muvuti-reticle.is-interactive .muvuti-reticle-corner {
+  width: 9px;
+  height: 9px;
+}
+
+.muvuti-click-pulse {
+  position: fixed;
+
+  width: 26px;
+  height: 26px;
+
+  z-index: 99998;
+
+  pointer-events: none;
+
+  margin-left: -13px;
+  margin-top: -13px;
+
+  border: 1px solid rgba(216, 187, 132, 0.68);
+  border-radius: 999px;
+}
+
+
+/* ---------------------------------------------------------
+   Tactical target hover
+   Add className="tactical-target" to selected UI elements.
+   --------------------------------------------------------- */
+
+.tactical-target {
+  position: relative;
+  isolation: isolate;
+}
+
+.tactical-target::after {
+  content: "";
+
+  position: absolute;
+
+  inset: -6px;
+
+  z-index: 5;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  background:
+    linear-gradient(#b28a50, #b28a50) left top / 8px 1px no-repeat,
+    linear-gradient(#b28a50, #b28a50) left top / 1px 8px no-repeat,
+
+    linear-gradient(#b28a50, #b28a50) right top / 8px 1px no-repeat,
+    linear-gradient(#b28a50, #b28a50) right top / 1px 8px no-repeat,
+
+    linear-gradient(#b28a50, #b28a50) left bottom / 8px 1px no-repeat,
+    linear-gradient(#b28a50, #b28a50) left bottom / 1px 8px no-repeat,
+
+    linear-gradient(#b28a50, #b28a50) right bottom / 8px 1px no-repeat,
+    linear-gradient(#b28a50, #b28a50) right bottom / 1px 8px no-repeat;
+
+  transform: scale(1.08);
+
+  transition:
+    opacity 220ms ease,
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    inset 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tactical-target:hover::after,
+.tactical-target:focus-visible::after {
+  inset: -3px;
+
+  opacity: 1;
+
+  transform: scale(1);
+}
+
+
+/* =========================================================
+   MUVUTI RETICLE V2
+   More reliable + higher visual contrast
+   ========================================================= */
+
+.muvuti-reticle {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 34px;
+  height: 34px;
+
+  margin-left: -17px;
+  margin-top: -17px;
+
+  z-index: 2147483647;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  will-change: transform;
+
+  filter:
+    drop-shadow(0 1px 1px rgba(0, 0, 0, 0.75))
+    drop-shadow(0 0 5px rgba(216, 187, 132, 0.14));
+
+  transition:
+    width 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    height 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    margin 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 120ms ease;
+}
+
+.muvuti-reticle.is-visible {
+  opacity: 1;
+}
+
+.muvuti-reticle.is-interactive {
+  width: 44px;
+  height: 44px;
+
+  margin-left: -22px;
+  margin-top: -22px;
+}
+
+
+/* center ring */
+
+.muvuti-reticle-ring {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 14px;
+  height: 14px;
+
+  border: 1px solid rgba(216, 187, 132, 0.36);
+
+  border-radius: 999px;
+
+  transform: translate(-50%, -50%) scale(0.8);
+
+  opacity: 0;
+
+  transition:
+    opacity 220ms ease,
+    transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.muvuti-reticle.is-interactive .muvuti-reticle-ring {
+  opacity: 1;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1);
+}
+
+
+/* center point */
+
+.muvuti-reticle-dot {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 999px;
+
+  background: #f1ddb5;
+
+  box-shadow:
+    0 0 0 1px rgba(14, 12, 9, 0.58),
+    0 0 7px rgba(216, 187, 132, 0.30);
+
+  transform: translate(-50%, -50%);
+}
+
+
+/* short targeting lines */
+
+.muvuti-reticle-line {
+  position: absolute;
+
+  background: rgba(226, 196, 141, 0.78);
+
+  transition:
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 260ms ease;
+}
+
+.line-top,
+.line-bottom {
+  left: 50%;
+
+  width: 1px;
+  height: 4px;
+
+  transform: translateX(-50%);
+}
+
+.line-left,
+.line-right {
+  top: 50%;
+
+  width: 4px;
+  height: 1px;
+
+  transform: translateY(-50%);
+}
+
+.line-top {
+  top: 5px;
+}
+
+.line-bottom {
+  bottom: 5px;
+}
+
+.line-left {
+  left: 5px;
+}
+
+.line-right {
+  right: 5px;
+}
+
+
+/* targeting brackets */
+
+.muvuti-reticle-corner {
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  border-color: rgba(226, 196, 141, 0.94);
+
+  transition:
+    width 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    height 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.corner-tl {
+  top: 0;
+  left: 0;
+
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+.corner-tr {
+  top: 0;
+  right: 0;
+
+  border-top: 1px solid;
+  border-right: 1px solid;
+}
+
+.corner-bl {
+  bottom: 0;
+  left: 0;
+
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+}
+
+.corner-br {
+  right: 0;
+  bottom: 0;
+
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.muvuti-reticle.is-interactive .muvuti-reticle-corner {
+  width: 10px;
+  height: 10px;
+}
+
+
+/* click feedback */
+
+.muvuti-click-pulse {
+  position: fixed;
+
+  width: 30px;
+  height: 30px;
+
+  margin-left: -15px;
+  margin-top: -15px;
+
+  z-index: 2147483646;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(226, 196, 141, 0.72);
+  border-radius: 999px;
+
+  box-shadow:
+    0 0 0 1px rgba(14, 12, 9, 0.28);
+}
+
+
+/* Native cursor where a custom cursor is preferable */
+
+@media (hover: hover) and (pointer: fine) and (min-width: 768px) {
+  html.muvuti-custom-cursor iframe {
+    cursor: auto !important;
+  }
+
+  html.muvuti-custom-cursor input,
+  html.muvuti-custom-cursor textarea,
+  html.muvuti-custom-cursor select,
+  html.muvuti-custom-cursor [contenteditable="true"] {
+    cursor: text !important;
+  }
+}
+
+
+/* =========================================================
+   MUVUTI MOBILE TACTICAL FEEDBACK
+   ========================================================= */
+
+.muvuti-mobile-pulse {
+  position: fixed;
+
+  width: 34px;
+  height: 34px;
+
+  margin-left: -17px;
+  margin-top: -17px;
+
+  z-index: 2147483646;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(178, 138, 80, 0.82);
+  border-radius: 999px;
+
+  box-shadow:
+    0 0 0 1px rgba(23, 19, 14, 0.22),
+    0 0 16px rgba(178, 138, 80, 0.16);
+}
+
+
+/* Generic press feedback */
+
+@media (hover: none), (pointer: coarse) {
+  a,
+  button,
+  [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .muvuti-touch-active {
+    opacity: 0.78;
+
+    transition:
+      opacity 120ms ease;
+  }
+
+
+  /* Tactical target brackets also work on touch */
+
+  .tactical-target.muvuti-touch-active::after {
+    inset: -3px;
+
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+
+/* =========================================================
+   TACTICAL VISUAL ATMOSPHERE
+   ========================================================= */
+
+.muvuti-scan-line {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(178, 138, 80, 0.85),
+      transparent
+    );
+
+  animation: muvutiScan 7s ease-in-out infinite;
+}
+
+@keyframes muvutiScan {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 0.25;
+  }
+
+  75% {
+    opacity: 0.12;
+  }
+
+  100% {
+    transform: translateY(500px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .muvuti-scan-line {
+    animation: none;
+  }
+}
+
+
+/* =========================================================
+   MUVUTI NAV — FLOATING LOGO
+   ========================================================= */
+
+.muvuti-floating-logo {
+  isolation: isolate;
+}
+
+.muvuti-floating-logo::before,
+.muvuti-floating-logo::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  pointer-events: none;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 999px;
+}
+
+
+/* soft warm halo */
+
+.muvuti-floating-logo::before {
+  width: 96px;
+  height: 96px;
+
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(178, 138, 80, 0.18) 0%,
+      rgba(178, 138, 80, 0.08) 38%,
+      rgba(178, 138, 80, 0) 72%
+    );
+
+  filter: blur(4px);
+
+  animation:
+    muvutiLogoGlow 4.5s ease-in-out infinite;
+}
+
+
+/* precision ring */
+
+.muvuti-floating-logo::after {
+  width: 84px;
+  height: 84px;
+
+  z-index: 1;
+
+  border: 1px solid rgba(216, 187, 132, 0.17);
+
+  animation:
+    muvutiLogoRing 4.5s ease-in-out infinite;
+}
+
+
+/* actual logo tile */
+
+.muvuti-floating-logo > a {
+  position: relative;
+
+  z-index: 2;
+
+  border-color: rgba(178, 138, 80, 0.34) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      #1a1510 0%,
+      #0e0c09 100%
+    ) !important;
+
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.4),
+    0 0 22px rgba(178, 138, 80, 0.08);
+
+  transition:
+    border-color 320ms ease,
+    box-shadow 320ms ease,
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.muvuti-floating-logo > a:hover {
+  border-color: rgba(216, 187, 132, 0.65) !important;
+
+  box-shadow:
+    0 16px 46px rgba(0, 0, 0, 0.44),
+    0 0 28px rgba(178, 138, 80, 0.16);
+}
+
+
+/* animation */
+
+@keyframes muvutiLogoGlow {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform:
+      translate(-50%, -50%)
+      scale(0.94);
+  }
+
+  50% {
+    opacity: 1;
+    transform:
+      translate(-50%, -50%)
+      scale(1.07);
+  }
+}
+
+@keyframes muvutiLogoRing {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform:
+      translate(-50%, -50%)
+      scale(0.94);
+  }
+
+  50% {
+    opacity: 0.62;
+    transform:
+      translate(-50%, -50%)
+      scale(1.08);
+  }
+}
+
+
+/* =========================================================
+   MUVUTI NAV — GOLD MENU ACQUISITION LINE
+   ========================================================= */
+
+[data-menu-link="true"] {
+  position: relative;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      #b28a50 0%,
+      #d8bb84 52%,
+      rgba(216, 187, 132, 0.15) 100%
+    );
+
+  background-repeat: no-repeat;
+
+  /*
+   * Existing separator stays intact.
+   * Gold line draws directly over it.
+   */
+  background-position: left bottom;
+  background-size: 0 1px;
+
+  transition:
+    color 280ms ease,
+    background-size 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-menu-link="true"]:hover,
+[data-menu-link="true"]:focus-visible {
+  color: #f3efe7;
+
+  background-size: 100% 1px;
+}
+
+
+/* tiny gold acquisition point */
+
+[data-menu-link="true"]::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  bottom: -2px;
+
+  width: 5px;
+  height: 5px;
+
+  background: #b28a50;
+
+  opacity: 0;
+
+  transform:
+    rotate(45deg)
+    scale(0);
+
+  transition:
+    opacity 220ms ease,
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-menu-link="true"]:hover::after,
+[data-menu-link="true"]:focus-visible::after {
+  opacity: 1;
+
+  transform:
+    rotate(45deg)
+    scale(1);
+}
+
+
+/* open menu close control */
+
+.muvuti-floating-logo ~ * button[aria-label*="Close"],
+.muvuti-floating-logo ~ * button[aria-label*="close"] {
+  transition:
+    border-color 260ms ease,
+    background-color 260ms ease,
+    color 260ms ease;
+}
+
+.muvuti-floating-logo ~ * button[aria-label*="Close"]:hover,
+.muvuti-floating-logo ~ * button[aria-label*="close"]:hover {
+  border-color: rgba(178, 138, 80, 0.55);
+
+  background: rgba(178, 138, 80, 0.08);
+
+  color: #d8bb84;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .muvuti-floating-logo::before,
+  .muvuti-floating-logo::after {
+    animation: none;
+  }
+
+  [data-menu-link="true"] {
+    transition: none;
+  }
+}
+
+
+/* =========================================================
+   MUVUTI BUTTON SYSTEM
+   Black = authority
+   Ivory = breathing space
+   Gold = precision
+   ========================================================= */
+
+.muvuti-btn-primary,
+.muvuti-btn-secondary,
+.muvuti-btn-outline,
+.muvuti-btn-icon {
+  position: relative;
+
+  border-radius: 0 !important;
+
+  transition:
+    background-color 280ms ease,
+    border-color 280ms ease,
+    color 280ms ease,
+    box-shadow 320ms ease,
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* PRIMARY
+   Main conversion buttons.
+*/
+
+.muvuti-btn-primary {
+  background: #15110d !important;
+
+  border: 1px solid rgba(178, 138, 80, 0.52) !important;
+
+  color: #f3efe7 !important;
+
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.muvuti-btn-primary:hover,
+.muvuti-btn-primary:focus-visible {
+  background: #1d1710 !important;
+
+  border-color: #d8bb84 !important;
+
+  color: #ffffff !important;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.18),
+    0 0 0 1px rgba(178, 138, 80, 0.12);
+}
+
+
+/* SECONDARY
+   Ivory action on dark surfaces.
+*/
+
+.muvuti-btn-secondary {
+  background: #f3efe7 !important;
+
+  border: 1px solid rgba(178, 138, 80, 0.38) !important;
+
+  color: #17130e !important;
+}
+
+.muvuti-btn-secondary:hover,
+.muvuti-btn-secondary:focus-visible {
+  background: #e8ddcc !important;
+
+  border-color: #b28a50 !important;
+
+  color: #17130e !important;
+
+  transform: translateY(-1px);
+}
+
+
+/* OUTLINE
+   Quieter actions.
+*/
+
+.muvuti-btn-outline {
+  background: transparent !important;
+
+  border: 1px solid rgba(178, 138, 80, 0.46) !important;
+
+  color: #b28a50 !important;
+}
+
+.muvuti-btn-outline:hover,
+.muvuti-btn-outline:focus-visible {
+  background: rgba(178, 138, 80, 0.08) !important;
+
+  border-color: #d8bb84 !important;
+
+  color: #d8bb84 !important;
+}
+
+
+/* ICON BUTTON */
+
+.muvuti-btn-icon {
+  background: #15110d !important;
+
+  border: 1px solid rgba(178, 138, 80, 0.36) !important;
+
+  color: #d8bb84 !important;
+}
+
+.muvuti-btn-icon:hover,
+.muvuti-btn-icon:focus-visible {
+  background: #211a11 !important;
+
+  border-color: #d8bb84 !important;
+
+  color: #f3efe7 !important;
+
+  transform: translateY(-2px);
+}
+
+
+/* Gold arrow movement */
+
+.muvuti-btn-primary svg,
+.muvuti-btn-secondary svg,
+.muvuti-btn-outline svg {
+  transition:
+    color 280ms ease,
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.muvuti-btn-primary svg {
+  color: #d8bb84;
+}
+
+.muvuti-btn-secondary svg {
+  color: #8d6738;
+}
+
+.muvuti-btn-outline svg {
+  color: currentColor;
+}
+
+.muvuti-btn-primary:hover svg,
+.muvuti-btn-secondary:hover svg,
+.muvuti-btn-outline:hover svg {
+  transform: translate(2px, -2px);
+}
+
+
+/* keyboard focus */
+
+.muvuti-btn-primary:focus-visible,
+.muvuti-btn-secondary:focus-visible,
+.muvuti-btn-outline:focus-visible,
+.muvuti-btn-icon:focus-visible {
+  outline: 1px solid #d8bb84;
+  outline-offset: 4px;
+}
+
+
+/* mobile press */
+
+@media (hover: none), (pointer: coarse) {
+  .muvuti-btn-primary:active,
+  .muvuti-btn-secondary:active,
+  .muvuti-btn-outline:active,
+  .muvuti-btn-icon:active {
+    transform: scale(0.975);
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .muvuti-btn-primary,
+  .muvuti-btn-secondary,
+  .muvuti-btn-outline,
+  .muvuti-btn-icon,
+  .muvuti-btn-primary svg,
+  .muvuti-btn-secondary svg,
+  .muvuti-btn-outline svg {
+    transition: none;
+  }
+}
+
+
+/* Navbar CTA refinement */
+
+.muvuti-floating-logo ~ * .muvuti-btn-secondary {
+  box-shadow:
+    inset 0 0 0 1px rgba(178, 138, 80, 0.08),
+    0 10px 30px rgba(0, 0, 0, 0.16);
+}
+
+.muvuti-floating-logo ~ * .muvuti-btn-secondary:hover {
+  box-shadow:
+    inset 0 0 0 1px rgba(178, 138, 80, 0.18),
+    0 14px 38px rgba(0, 0, 0, 0.22);
+}

@@ -17,7 +17,7 @@ export default function TacticalBackdrop({
         absolute
         inset-0
         overflow-hidden
-        ${dark ? "text-[#f3efe7]" : "text-[#17130e]"}
+        ${dark ? "text-white" : "text-[#17130e]"}
       `}
     >
       {/* faint grid */}

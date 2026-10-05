@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100svh] overflow-hidden bg-[#173f43] text-[#f3efe7]">
+    <section className="relative min-h-[100svh] overflow-hidden bg-[#173f43] text-white">
       {/* Background image */}
       <motion.div
         initial={{ scale: 1.04, opacity: 0.88 }}
@@ -23,36 +23,39 @@ export default function Hero() {
           alt="Security services hero background"
           fill
           priority
-          className="object-cover object-[56%_center] brightness-[0.78] contrast-[0.94]"
+          className="object-cover object-center"
         />
       </motion.div>
 
-      {/* Left-side reading zone */}
+      {/* Main dark overlay */}
       <div
         className="
           absolute inset-0
-          bg-[linear-gradient(90deg,rgba(5,18,20,0.80)_0%,rgba(5,18,20,0.66)_28%,rgba(5,18,20,0.38)_48%,rgba(5,18,20,0.14)_67%,rgba(5,18,20,0.03)_82%,transparent_100%)]
+          bg-gradient-to-r
+          from-[#0b1d20]/58
+          via-[#0b1d20]/22
+          to-[#0b1d20]/18
         "
       />
 
-      {/* Soft overall atmosphere */}
+      {/* Soft top overlay */}
       <div
         className="
           absolute inset-0
           bg-gradient-to-b
-          from-black/10
+          from-black/18
           via-transparent
-          to-black/20
+          to-black/12
         "
       />
 
-      {/* Ground the bottom controls */}
+      {/* Bottom fade for grounding text */}
       <div
         className="
           absolute inset-0
           bg-gradient-to-t
-          from-black/38
-          via-black/5
+          from-black/30
+          via-transparent
           to-transparent
         "
       />
@@ -86,7 +89,7 @@ export default function Hero() {
                   text-[9px]
                   uppercase
                   tracking-[0.28em]
-                  text-[#f3efe7]/78
+                  text-white/65
                   md:mb-8
                 "
               >
@@ -104,17 +107,16 @@ export default function Hero() {
                     ease: [0.22, 1, 0.36, 1],
                   }}
                   className="
-                    max-w-[820px]
-                    text-[52px]
+                    max-w-[900px]
+                    text-[54px]
                     font-normal
                     leading-[0.93]
                     tracking-[-0.055em]
-                    text-[#f3efe7]/[0.97]
-                    drop-shadow-[0_2px_16px_rgba(0,0,0,0.16)]
-                    sm:text-[62px]
-                    md:text-[74px]
-                    lg:text-[84px]
-                    xl:text-[92px]
+                    text-white
+                    sm:text-[64px]
+                    md:text-[78px]
+                    lg:text-[92px]
+                    xl:text-[104px]
                   "
                 >
                   Protection that
@@ -135,15 +137,13 @@ export default function Hero() {
               >
                 <Link
                   href="/services"
-                  className="muvuti-btn-primary
-              
-                    tactical-target
+                  className="
                     group inline-flex h-[54px]
                     items-center gap-6
                     rounded-full
                     bg-[#15110d]
                     py-1.5 pl-6 pr-1.5
-                    text-[14px] text-[#f3efe7]
+                    text-[14px] text-white
                     transition-all duration-300
                     hover:bg-[#123033]
                   "
@@ -179,7 +179,7 @@ export default function Hero() {
           }}
           className="
             flex items-end justify-between
-            border-t border-[#b28a50]/20
+            border-t border-white/12
             pt-5
           "
         >
@@ -188,7 +188,7 @@ export default function Hero() {
               max-w-[220px]
               text-[12px]
               leading-[1.45]
-              text-[#f3efe7]/78
+              text-white/78
               md:text-[13px]
             "
           >
@@ -210,9 +210,9 @@ export default function Hero() {
               text-[10px]
               uppercase
               tracking-[0.2em]
-              text-[#f3efe7]/65
+              text-white/65
               transition-colors duration-300
-              hover:text-[#f3efe7]
+              hover:text-white
             "
           >
             Discover more

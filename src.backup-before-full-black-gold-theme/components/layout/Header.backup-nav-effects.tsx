@@ -22,7 +22,7 @@ function getCurrentMenuKey(pathname: string) {
 
 export default function Header() {
   const pathname = usePathname();
-const currentMenuKey = getCurrentMenuKey(pathname);
+  const currentMenuKey = getCurrentMenuKey(pathname);
 
   const [open, setOpen] = useState(false);
   const [hoveredKey, setHoveredKey] = useState<string | null>(null);
@@ -166,7 +166,7 @@ const currentMenuKey = getCurrentMenuKey(pathname);
             }}
           >
             <div
-              className="muvuti-closed-nav 
+              className="
                 pointer-events-auto
                 flex
                 w-full
@@ -240,7 +240,7 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                   border-l border-[rgba(178,138,80,0.22)]
                   transition-all
                   duration-300
-                  hover:bg-[#b28a50]/10/5
+                  hover:bg-[#f3efe7]/5
                   md:h-[50px]
                 "
               >
@@ -262,7 +262,7 @@ const currentMenuKey = getCurrentMenuKey(pathname);
       <AnimatePresence>
         {open && (
           <motion.div
-            className="muvuti-nav-backdrop fixed inset-0 z-[60]"
+            className="fixed inset-0 z-[60]"
             initial={{
               opacity: 0,
             }}
@@ -283,7 +283,7 @@ const currentMenuKey = getCurrentMenuKey(pathname);
             <motion.div
               className="
                 absolute inset-0
-                bg-[#0e0c09]/55
+                bg-[#0b2c2f]/50
                 backdrop-blur-[7px]
               "
               initial={{
@@ -380,7 +380,6 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                   className="
                     absolute
                     left-1/2
-                muvuti-floating-logo
                     -top-[80px]
                     z-30
                     -translate-x-1/2
@@ -408,7 +407,7 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                         items-center
                         justify-center
                         border
-                        border-[#b28a50]/25
+                        border-white/15
                         bg-[linear-gradient(180deg,rgba(21,17,13,0.96),rgba(24,19,14,0.98))]
                         shadow-[0_18px_45px_rgba(0,0,0,0.28)]
                         backdrop-blur-xl
@@ -502,12 +501,12 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                         w-10
                         items-center
                         justify-center
-                        border border-[#b28a50]/30
+                        border border-white/20
                         text-[#f3efe7]
                         transition-all
                         duration-300
                         hover:border-white/40
-                        hover:bg-[#b28a50]/10/5
+                        hover:bg-[#f3efe7]/5
                       "
                       initial={{
                         opacity: 0,
@@ -766,8 +765,7 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                     <Link
                       href="/contact"
                       onClick={closeMenu}
-                      className="muvuti-btn-secondary
-              
+                      className="
                         group
                         mt-7
                         inline-flex
@@ -779,7 +777,7 @@ const currentMenuKey = getCurrentMenuKey(pathname);
                         text-[#15110d]
                         transition-colors
                         duration-300
-                        hover:bg-[#b28a50]/10
+                        hover:bg-[#f3efe7]
                       "
                     >
                       <ArrowUpRight
